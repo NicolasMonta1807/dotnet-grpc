@@ -1,0 +1,68 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+*.nupkg
+
+# gRPC generated files
+*.proto
+*.pb.cs
+*.pb.h
+*.grpc.cs
+*.grpc.pb.cs
+
+# Rider
+.idea/
+*.sln.iml
+
+# Dotnet files
+*.dbmdl
+*.dbproj.schemaview
+*.jfm
+*.jfm/
+*.pdb
+*.mdb
+
+# NuGet
+*.nupkg
+*.snupkg
+*.nuspec
+**/packages/*
+**/project.lock.json
+**/project.assets.json
+
+# VS Code
+.vscode/
+
+# User-specific files
+*.rsuser
+*.suo
+*.userprefs
+
+# Temporary files
+*~ 
+*.tmp
+*.temp
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.swp
