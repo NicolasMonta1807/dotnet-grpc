@@ -1,0 +1,98 @@
+# .NET build directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.userprefs
+
+# User-specific Visual Studio for Mac config folder
+.vscode/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows Installer files for NuGet packages
+packages/
+
+# .NET Core SDK
+project.lock.json
+project.fragment.lock.json
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+
+# Rider config folder
+.idea/
+
+# JetBrains Rider
+.idea/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# VS for Mac config folder
+.vscode/
+
+# VS2019 config folder
+.vs2019/
+
+# VS Code directories
+.vscode/
+
+# .NET Core tool specific folders
+.vscode/
+
+# Folders where the NuGet packages are stored
+.nuget/
+
+# Dotnet tools
+.dotnet-tools/
+
+# NuGet package files
+*.nupkg
+*.snupkg
+
+# Temporary ASP.NET files
+TemporaryASP.NETFiles/
+
+# Local development settings files (e.g., appsettings.Development.json)
+appsettings.Development.json
+
+# Windows installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Backup files
+*~
+*.bak
+
+# .NET Core tools (tool manifests, caches, etc)
+.dotnet/
+
+# Generated files from gRPC tooling
+obj/**/*.grpc.cs
+obj/**/*.grpc.pb.cs
+
+# IntelliJ IDEA
+.idea/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# macOS system files
+.DS_Store
+
+# Linux system files
+*.swp

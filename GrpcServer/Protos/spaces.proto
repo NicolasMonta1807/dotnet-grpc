@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer";
+
+package spaces;
+
+// Espacio
+message Espacio {
+  int32 id = 1;
+  string name = 2;
+  int32 capacity = 3;
+}
+
+message EspacioConsultRequest {
+  int32 id = 1;
+}
+
+message EspacioCreateRequest {
+  string name = 1;
+  int32 capacity = 2;
+}
+
+message EspacioListResponse {
+  repeated Espacio espacios = 1;
+}
+
+message EspacioUpdateRequest {
+  int32 id = 1;
+  string name = 2;
+  int32 capacity = 3;
+}
+
+message EspacioDeleteRequest {
+  int32 id = 1;
+}
+
+message EspacioResponse { 
+  Espacio espacio = 1;
+}
+
+message Empty {}
+
+// Servicios sobre Espacios
+service Espacios {
+  rpc CreateEspacio(EspacioCreateRequest) returns (EspacioResponse);
+  rpc GetEspacio(EspacioConsultRequest) returns (EspacioResponse);
+  rpc GetAllEspacios(Empty) returns (EspacioListResponse);
+  rpc UpdateEspacio(EspacioUpdateRequest) returns (EspacioResponse);
+  rpc DeleteEspacio(EspacioDeleteRequest) returns (Empty);
+}
