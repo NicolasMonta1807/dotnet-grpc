@@ -20,15 +20,14 @@ namespace GrpcServer.Services
     {
       var espacio = new Espacio
       {
-        Id = _espacios.Count > 0 ? _espacios.Max(e => e.Id) + 1 : 1, // Genera un ID incremental
+        Id = _espacios.Count > 0 ? _espacios.Max(e => e.Id) + 1 : 1,
         Name = request.Name,
         Capacity = request.Capacity
       };
 
       _espacios.Add(espacio);
 
-      // Mensaje en consola
-      Console.WriteLine($"Espacio creado: ID = {espacio.Id}, Nombre = {espacio.Name}, Capacidad = {espacio.Capacity}");
+      Console.WriteLine($"Servidor: Espacio creado: ID = {espacio.Id}, Nombre = {espacio.Name}, Capacidad = {espacio.Capacity}");
 
       return Task.FromResult(new EspacioResponse
       {
@@ -42,13 +41,11 @@ namespace GrpcServer.Services
 
       if (espacio == null)
       {
-        // Mensaje de error y log
-        Console.WriteLine($"Espacio con ID {request.Id} no encontrado.");
+        Console.WriteLine($"Servidor: Espacio con ID {request.Id} no encontrado.");
         throw new RpcException(new Status(StatusCode.NotFound, "Espacio no encontrado"));
       }
 
-      // Mensaje en consola
-      Console.WriteLine($"Espacio encontrado: ID = {espacio.Id}, Nombre = {espacio.Name}, Capacidad = {espacio.Capacity}");
+      Console.WriteLine($"Servidor: Espacio encontrado: ID = {espacio.Id}, Nombre = {espacio.Name}, Capacidad = {espacio.Capacity}");
 
       return Task.FromResult(new EspacioResponse
       {
@@ -61,8 +58,7 @@ namespace GrpcServer.Services
       var response = new EspacioListResponse();
       response.Espacios.AddRange(_espacios);
 
-      // Mensaje en consola
-      Console.WriteLine($"Total de espacios disponibles: {response.Espacios.Count}");
+      Console.WriteLine($"Servidor: Total de espacios disponibles: {response.Espacios.Count}");
 
       return Task.FromResult(response);
     }
@@ -73,17 +69,14 @@ namespace GrpcServer.Services
 
       if (espacio == null)
       {
-        // Mensaje de error y log
-        Console.WriteLine($"Espacio con ID {request.Id} no encontrado para actualización.");
+        Console.WriteLine($"Servidor: Espacio con ID {request.Id} no encontrado para actualización.");
         throw new RpcException(new Status(StatusCode.NotFound, "Espacio no encontrado"));
       }
 
-      // Actualiza el espacio
       espacio.Name = request.Name;
       espacio.Capacity = request.Capacity;
 
-      // Mensaje en consola
-      Console.WriteLine($"Espacio actualizado: ID = {espacio.Id}, Nombre = {espacio.Name}, Capacidad = {espacio.Capacity}");
+      Console.WriteLine($"Servidor: Espacio actualizado: ID = {espacio.Id}, Nombre = {espacio.Name}, Capacidad = {espacio.Capacity}");
 
       return Task.FromResult(new EspacioResponse
       {
@@ -97,15 +90,13 @@ namespace GrpcServer.Services
 
       if (espacio == null)
       {
-        // Mensaje de error y log
-        Console.WriteLine($"Espacio con ID {request.Id} no encontrado para eliminación.");
+        Console.WriteLine($"Servidor: Espacio con ID {request.Id} no encontrado para eliminación.");
         throw new RpcException(new Status(StatusCode.NotFound, "Espacio no encontrado"));
       }
 
       _espacios.Remove(espacio);
 
-      // Mensaje en consola
-      Console.WriteLine($"Espacio eliminado: ID = {espacio.Id}, Nombre = {espacio.Name}");
+      Console.WriteLine($"Servidor: Espacio eliminado: ID = {espacio.Id}, Nombre = {espacio.Name}");
 
       return Task.FromResult(new Empty());
     }
